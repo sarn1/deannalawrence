@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: DeannaLawrence
 Description: Custom theme for Deanna Lawrence
@@ -5,7 +6,6 @@ Author: Webvolution LLC
 Author URI: http://www.webvolutionchicago.com
 Version: 1.0
 */
-
 /*
 www.font2web.com
 http://everythingfonts.com/ttf-to-otf
@@ -32,11 +32,16 @@ http://www.freefontconverter.com/
 	font-style: normal;
 }
 */
-
 a {
-	text-decoration:none;	
-}
+  text-decoration: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFF; }
 
 img {
-	border:none;	
-}
+  border: none; }

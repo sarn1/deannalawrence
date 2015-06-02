@@ -10,28 +10,17 @@ Version: 1.0
 www.font2web.com
 http://everythingfonts.com/ttf-to-otf
 http://www.freefontconverter.com/
-@font-face {
-	font-family: 'HelveticaNeue';
-	src: url('/includes/fonts/HelveticaNeue.eot');
-	src: local('â˜º'), url('/includes/fonts/HelveticaNeue.woff') format('woff'), url('/includes/fonts/HelveticaNeue.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'HelveticaNeueMedCond';
-	src: url('/includes/fonts/HelveticaNeueLTStd-BlkCn.eot');
-	src: local('â˜º'), url('/includes/fonts/HelveticaNeueLTStd-BlkCn.woff') format('woff'), url('/includes/fonts/HelveticaNeueLTStd-BlkCn.ttf') format('truetype'), url('/includes/fonts/HelveticaNeueLTStd-BlkCn.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'HelveticaNeueBoldCond';
-	src: url('/includes/fonts/HelveticaNeueLTStd-BdCn.eot');
-	src: local('â˜º'), url('/includes/fonts/HelveticaNeueLTStd-BdCn.woff') format('woff'), url('/includes/fonts/HelveticaNeueLTStd-BdCn.ttf') format('truetype'), url('/includes/fonts/HelveticaNeueLTStd-BdCn.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 */
+@font-face {
+  font-family: 'GreatVibes-Regular';
+  src: url("/includes/fonts/GreatVibes-Regular.eot");
+  src: local("â˜º"), url("/includes/fonts/GreatVibes-Regular.woff") format("woff"), url("/includes/fonts/GreatVibes-Regular.ttf") format("truetype"), url("/includes/fonts/GreatVibes-Regular.svg") format("svg"); }
+@font-face {
+  font-family: 'PoiretOne-Regular';
+  src: url("/includes/fonts/PoiretOne-Regular.eot");
+  src: local("â˜º"), url("/includes/fonts/HPoiretOne-Regular.woff") format("woff"), url("/includes/fonts/PoiretOne-Regular.ttf") format("truetype"), url("/includes/fonts/PoiretOne-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 a {
   text-decoration: none; }
 
@@ -41,7 +30,8 @@ body {
   background-color: #000;
   font-size: 12px;
   line-height: 14px;
-  color: #FFF; }
+  color: #FFF;
+  font-family: "Raleway, Helvetica, Arial, sans-serif"; }
 
 img {
   border: none; }

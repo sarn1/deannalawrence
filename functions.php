@@ -99,20 +99,18 @@ add_action( 'wp_enqueue_scripts', 'prefix_add_my_stylesheet' );
 function prefix_add_my_stylesheet() {
 	
         // Respects SSL, Style.css is relative to the current file
-        wp_register_style( 's452-normalize-style', get_bloginfo('template_directory').'/includes/normalize.css' , __FILE__ );
+        wp_register_style( 's452-normalize-style', get_bloginfo('template_directory').'/includes/Skeleton-2.0.4/css/normalize.css' , __FILE__ );
         wp_enqueue_style( 's452-normalize-style' );
 		
 		wp_register_style( 's452-wp-core-style', get_bloginfo('template_directory').'/includes/wp-styles.css' , __FILE__ );
         wp_enqueue_style( 's452-wp-core-style' );
 		
-		//wp_register_style( 's452-bootstrap', get_bloginfo('template_directory').'/includes/bootstrap/css/bootstrap.min.css' , __FILE__ );
-        //wp_enqueue_style( 's452-bootstrap' );
+		wp_register_style( 's452-skeleton', get_bloginfo('template_directory').'/includes/Skeleton-2.0.4/css/skeleton.css' , __FILE__ );
+        wp_enqueue_style( 's452-skeleton' );
 
         wp_register_style( 's452-style', get_bloginfo('template_directory').'/style.css' , __FILE__ );
         wp_enqueue_style( 's452-style' );
-
-
-    }
+}
 	
 
 
@@ -186,30 +184,7 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 
 
-/* BOOTSTRAP MODS 
-//auto add img-responsive to all images added via the wp post
-//http://stackoverflow.com/questions/20473004/how-to-add-automatic-class-in-image-for-wordpress-post
-function add_responsive_class($content){
 
-        $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-        $document = new DOMDocument();
-        libxml_use_internal_errors(true);
-        $document->loadHTML(utf8_decode($content));
-
-        $imgs = $document->getElementsByTagName('img');
-        foreach ($imgs as $img) {           
-           $img->setAttribute('class','img-responsive');
-        }
-
-        $html = $document->saveHTML();
-        return $html;   
-}
-add_filter        ('the_content', 'add_responsive_class');
-
-
-require_once('includes/bootstrap/wp_bootstrap_navwalker.php');
- 
-*/
 
 
 

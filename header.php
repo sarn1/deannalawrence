@@ -29,7 +29,21 @@
 <body <?php body_class(); ?>>
 
 <header>
+
+<!-- mobile trigram menu -->
+<?php echo do_shortcode( '[responsive-menu menu="main-menu"]' ); ?>
+
+<h1 id="logo"><?php bloginfo('name'); ?></h1>
+<h2 id="sublogo"><?= bloginfo('description'); ?></h2>
 <nav>
-        <?php wp_nav_menu(array('theme_location'=>'main-menu','container_class'=>'main-menu')); ?>
+    <div class="container">
+        <!-- columns should be the immediate child of a .row -->
+        <div class="row">
+            <div class="seven column">
+                <!-- desktop tablet menu -->
+                <?php wp_nav_menu(array('theme_location'=>'main-menu','container_class'=>'main-menu')); ?>
+            </div>
+        </div>
+    </div>
 </nav>
 </header>

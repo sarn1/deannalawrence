@@ -13,25 +13,86 @@ http://www.freefontconverter.com/
 */
 @font-face {
   font-family: 'GreatVibes-Regular';
-  src: url("/includes/fonts/GreatVibes-Regular.eot");
-  src: local("â˜º"), url("/includes/fonts/GreatVibes-Regular.woff") format("woff"), url("/includes/fonts/GreatVibes-Regular.ttf") format("truetype"), url("/includes/fonts/GreatVibes-Regular.svg") format("svg"); }
+  src: url("includes/fonts/GreatVibes-Regular.eot");
+  src: local("â˜º"), url("/includes/fonts/GreatVibes-Regular.woff") format("woff"), url("includes/fonts/GreatVibes-Regular.ttf") format("truetype"), url("includes/fonts/GreatVibes-Regular.svg") format("svg"); }
 @font-face {
   font-family: 'PoiretOne-Regular';
-  src: url("/includes/fonts/PoiretOne-Regular.eot");
-  src: local("â˜º"), url("/includes/fonts/HPoiretOne-Regular.woff") format("woff"), url("/includes/fonts/PoiretOne-Regular.ttf") format("truetype"), url("/includes/fonts/PoiretOne-Regular.svg") format("svg");
+  src: url("includes/fonts/PoiretOne-Regular.eot");
+  src: local("â˜º"), url("includes/fonts/HoiretOne-Regular.woff") format("woff"), url("includes/fonts/PoiretOne-Regular.ttf") format("truetype"), url("includes/fonts/PoiretOne-Regular.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
-a {
-  text-decoration: none; }
-
 body {
   margin: 0;
   padding: 0;
   background-color: #000;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 17px;
   color: #FFF;
-  font-family: "Raleway, Helvetica, Arial, sans-serif"; }
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  background-image: url("/wp-content/uploads/2015/06/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+a {
+  text-decoration: none;
+  color: #FFF; }
+
+article {
+  width: 100%;
+  max-width: 870px;
+  margin: auto; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0; }
 
 img {
-  border: none; }
+  border: thin solid #FFF; }
+  img.homepage_banner {
+    width: 870px; }
+
+header {
+  text-align: center; }
+  header h1#logo {
+    font-family: "PoiretOne-Regular", sans-serif;
+    font-size: 61px;
+    line-height: 65px;
+    margin-top: 30px; }
+  header h2#sublogo {
+    color: #FFCC99;
+    font-size: 16px; }
+  header nav ul#menu-main-menu-1 {
+    list-style: none;
+    margin: 15px 0 0 0;
+    padding: 0; }
+    header nav ul#menu-main-menu-1 li {
+      display: -moz-inline-stack;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+      width: 11%;
+      text-align: center; }
+
+footer {
+  margin-top: 35px;
+  text-align: center; }
+  footer img {
+    border: none; }
+  footer p {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 15px; }
+
+._center {
+  text-align: center; }
+
+body.home article {
+  margin-bottom: 15px; }
+  body.home article h1 {
+    font-family: "GreatVibes-Regular", sans-serif;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: normal;
+    margin: 14px 0 10px 0; }
+    body.home article h1 span {
+      color: #FFCC99; }

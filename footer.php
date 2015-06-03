@@ -1,8 +1,8 @@
 <?php wp_footer(); ?>
 
 	<footer>
-    	<?php dynamic_sidebar('Footer'); ?>
-        <p class="copyright">&copy; Copyright <?php echo date("Y"); ?> All rights reserved. <a href="http://www.webvolutionchicago.com" target="_blank">Designed by Webvolution</a></p>
+        <img src="/wp-content/uploads/2015/06/social-media-set-1.png"><img src="/wp-content/uploads/2015/06/social-media-set-2.png">
+        <p class="copyright">&copy; <?php echo date("Y"); ?> Copyright Deanna Lawrence.  All rights reserved.</p>
     </footer>
 
 <script>

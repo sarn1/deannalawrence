@@ -14,39 +14,66 @@ http://www.freefontconverter.com/
 
 @font-face {
 	font-family: 'GreatVibes-Regular';
-	src: url('/includes/fonts/GreatVibes-Regular.eot');
-	src: local('â˜º'), url('/includes/fonts/GreatVibes-Regular.woff') format('woff'), url('/includes/fonts/GreatVibes-Regular.ttf') format('truetype'), url('/includes/fonts/GreatVibes-Regular.svg') format('svg');
+	src: url('includes/fonts/GreatVibes-Regular.eot');
+	src: local('â˜º'), url('/includes/fonts/GreatVibes-Regular.woff') format('woff'), url('includes/fonts/GreatVibes-Regular.ttf') format('truetype'), url('includes/fonts/GreatVibes-Regular.svg') format('svg');
 }
 
 @font-face {
 	font-family: 'PoiretOne-Regular';
-	src: url('/includes/fonts/PoiretOne-Regular.eot');
-	src: local('â˜º'), url('/includes/fonts/HPoiretOne-Regular.woff') format('woff'), url('/includes/fonts/PoiretOne-Regular.ttf') format('truetype'), url('/includes/fonts/PoiretOne-Regular.svg') format('svg');
+	src: url('includes/fonts/PoiretOne-Regular.eot');
+	src: local('â˜º'), url('includes/fonts/HoiretOne-Regular.woff') format('woff'), url('includes/fonts/PoiretOne-Regular.ttf') format('truetype'), url('includes/fonts/PoiretOne-Regular.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-$font: "Raleway, Helvetica, Arial, sans-serif";
-$font-curve: "GreatVibes-Regular, sans-serif";
-$font-logo: "PoiretOne-Regular, sans-serif";
+$font: Raleway, Helvetica, Arial, sans-serif;
+$font-curve: "GreatVibes-Regular", sans-serif;
+$font-logo: "PoiretOne-Regular", sans-serif;
+$font-color: #FFF;
+$font-color-2: #FFCC99;
 
+$max-width: 870px;
 
-a {
-	text-decoration:none;	
+@mixin inline-block {
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
 }
 
 body {
   margin:0;
   padding:0;
   background-color: #000;
-  font-size:12px;
-  line-height:14px;
-  color: #FFF;
+  font-size:15px;
+  line-height:17px;
+  color: $font-color;
   font-family: $font;
+  background-image: url("/wp-content/uploads/2015/06/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
+a {
+  text-decoration:none;
+  color:$font-color;
+}
+
+article {
+  	width: 100%;
+  	max-width: $max-width;
+	margin:auto;
+}
+
+h1,h2,h3,h4,h5 {margin:0; padding:0;}
+
+
 img {
-	border:none;
+	border:thin solid #FFF;
+
+  &.homepage_banner {
+	width: $max-width;
+  }
 }
 
 header {}
@@ -54,4 +81,95 @@ article {}
 footer {}
 
 
-#content_body{}
+div {
+  //border: thin solid #FFF;
+}
+
+header {
+
+  text-align:center;
+
+  h1 {
+	&#logo{
+	  font-family: $font-logo;
+	  font-size: 61px;
+	  line-height:65px;
+	  margin-top: 30px;
+	}
+  }
+
+  h2 {
+	&#sublogo{
+	  color: $font-color-2;
+	  font-size:16px;
+	}
+  }
+
+  nav {
+	//desktop
+	ul {
+	  &#menu-main-menu-1 {
+		list-style: none;
+		margin: 15px 0 0 0;
+		padding:0;
+
+		li {
+			@include inline-block;
+		  	width:11%;
+		  	text-align:center;
+		}
+	  }
+	}
+
+  }
+}
+
+footer {
+
+  margin-top: 35px;
+  text-align:center;
+
+  img {
+	border: none;
+  }
+
+  p {
+	font-size:14px;
+	line-height:16px;
+	margin-top: 15px;
+  }
+}
+
+._center {
+  text-align:center;
+}
+
+//--------------- PAGE CUSTOM ---------------
+body.home {
+
+  article {
+	margin-bottom: 15px;
+
+	h1 {
+	  font-family: $font-curve;
+	  font-size:32px;
+	  line-height:36px;
+	  font-weight: normal;
+	  margin: 14px 0 10px 0;
+
+	  span {
+		color: $font-color-2
+	  }
+	}
+
+  }
+
+}
+
+
+
+//--------------- AFTER SASS ----------------
+
+
+
+

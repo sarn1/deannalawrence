@@ -116,12 +116,12 @@ function prefix_add_my_stylesheet() {
 
 /*	TINYMCE
 //http://www.wpexplorer.com/wordpress-tinymce-tweaks/
-
+*/
 
 // Add custom Fonts to the Fonts list
 if ( ! function_exists( 'wpex_mce_google_fonts_array' ) ) {
     function wpex_mce_google_fonts_array( $initArray ) {
-        $initArray['font_formats'] = 'Lato=Lato;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+        $initArray['font_formats'] = 'PoiretOne-Regular=PoiretOne-Regular,sans-serif;GreatVibes-Regular=GreatVibes-Regular,sans-serif;Raleway=Raleway,Helvetica,Arial,sans-serif;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
             return $initArray;
     }
 }
@@ -132,7 +132,7 @@ if ( ! function_exists( 'wpex_mce_google_fonts_styles' ) ) {
 
     function wpex_mce_google_fonts_styles() {
 
-      $font_url = 'http://fonts.googleapis.com/css?family=Lato:300,400,700';
+      $font_url = 'http://fonts.googleapis.com/css?family=Raleway:400,700';
 
            add_editor_style( str_replace( ',', '%2C', $font_url ) );
 
@@ -160,21 +160,20 @@ $default_colours = '
     "FF99CC", "Pink",         "FFCC99", "Peach",        "FFFF99", "Light yellow", "CCFFCC", "Pale green",   "CCFFFF", "Pale cyan",    "99CCFF", "Light sky blue", "CC99FF", "Plum",         "FFFFFF", "White"
 ';
 $custom_colours = '
-	"cc9966", "Link Color"
-	,"330000", "Dark Brown Color"
+	"ffcc99", "Tan",
 ';
 $init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']'; // build colour grid default+custom colors
 $init['textcolor_rows'] = 6; // enable 6th row for custom colours in grid
 return $init;
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
-*/
+
 add_filter( 'mce_buttons_2', 'wpex_mce_buttons' );
 
 // Customize mce editor font sizes
 if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
 	function wpex_mce_text_sizes( $initArray ){
-		$initArray['fontsize_formats'] = "9px 10px 12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 28px 30px 32px 36px 40px 42px 45px";
+		$initArray['fontsize_formats'] = "9px 10px 12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 28px 30px 32px 36px 40px 42px 45px 50px 60px 61px";
 		return $initArray;
 	}
 }

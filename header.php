@@ -33,8 +33,9 @@
 <!-- mobile trigram menu -->
 <?php echo do_shortcode( '[responsive-menu menu="main-menu"]' ); ?>
 
-<h1 id="logo"><?php bloginfo('name'); ?></h1>
-<h2 id="sublogo"><?= bloginfo('description'); ?></h2>
+<h1 id="logo"><?php bloginfo('name'); ?><span>&nbsp;&nbsp;&nbsp;SAG/AFTRA</span></h1>
+<h2 id="sublogo"><span><?= bloginfo('description'); ?></span></h2>
+<h2 id="slogan"><span>Strong, Smart & Sassy&#8230;</span> Sprinkled with a Little Sweetness</h2>
 <nav>
     <div class="container">
         <!-- columns should be the immediate child of a .row -->

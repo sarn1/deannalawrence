@@ -80,12 +80,21 @@ article {
 		  margin-bottom:25px;
 		}
 
-		h2 {
+		h2, h3 {
 		  font-family: $font;
 		  color:$font-color-2;
 		  font-size:$font-size;
 		  line-height:$line-height;
+		  margin-bottom: 5px;
 		}
+}
+
+aside {
+  margin-left: 20px;
+
+  ul {
+	padding-top:5px;
+  }
 }
 
 h1,h2,h3,h4,h5 {margin:0; padding:0;}
@@ -97,6 +106,10 @@ img {
   &.homepage_banner {
 	width: $max-width;
   }
+}
+
+input, textarea {
+  color:#000;
 }
 
 header {}
@@ -117,15 +130,36 @@ header {
 	  font-size: 61px;
 	  line-height:65px;
 	  margin-top: 30px;
+
+		span {
+		  font-family: $font;
+		  color:$font-color-2;
+		  font-size:16px;
+		  line-height: 0;
+		  vertical-align: middle;
+		}
 	}
   }
 
   h2 {
-	&#sublogo{
-	  color: $font-color-2;
-	  font-size:16px;
-	  margin-bottom:15px;
-	}
+	  	&#sublogo {
+		  display:none;
+		  color: $font-color-2;
+		  font-size:16px;
+		  margin-bottom:15px;
+		}
+
+	  	&#slogan {
+		  display:block;
+		  font-size:24px;
+		  line-height:26px;
+		  font-family: $font-curve;
+		  margin-bottom: 15px;
+
+		  span {
+			color: $font-color-2;
+		  }
+		}
   }
 
   nav {
@@ -171,8 +205,43 @@ footer {
   text-align:center;
 }
 
+table {
+  width:100%;
+  border:none;
+  margin:0;
+  padding:0;
+
+  tr {
+	border:none;
+	margin:0;
+	padding:0;
+  }
+
+  td {
+	border:none;
+	width:33%;
+	text-align:left;
+	margin:0;
+	padding:0;
+  }
+}
+
 //--------------- PAGE CUSTOM ---------------
 body.home {
+
+  h1#logo {
+	span {
+		display: none;
+  	}
+  }
+
+  h2#slogan {
+	display:none !important;
+  }
+
+  h2#sublogo {
+	display:block !important;
+  }
 
   article {
 	margin-bottom: 15px;
@@ -197,18 +266,44 @@ body.home {
 }
 
 body.archive, body.blog {
+
+  h3 {
+	font-size:$font-size;
+	margin-bottom:5px;
+  }
+
+  &article {
 	h2 {
 	  font-family: $font;
 	  font-size: $font-size;
 	  line-height: $line-height;
 	  margin-bottom: 5px;
-	  font-weight:400;
-	  color:$font-color;
+	  font-weight: 400;
+	  color: $font-color;
 	  text-transform: uppercase;
 	}
+  }
 }
 
 
+body.category {
+  ul#menu-main-menu-1 li:nth-child(7) a {
+	color:$font-color-2;
+  }
+}
+
+body.single {
+  ul#menu-main-menu-1 li:nth-child(7) a {
+	color:$font-color-2;
+  }
+
+  #respond {
+	p {
+	  margin:0;
+	  padding:0;
+	}
+  }
+}
 
 //--------------- AFTER SASS ----------------
 

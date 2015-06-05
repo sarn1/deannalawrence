@@ -14,15 +14,18 @@
 			$archive_title = "NEWS";
 		elseif ($post_type == 'press-post')
 			$archive_title = "PRESS";
-		elseif($post_type == 'post')
-			$archive_title = "BLOG";
 
-		if (!is_null($archive_title)) {
-			echo '<article>';
-			echo "<h1>{$archive_title}</h1>";
-		}
+		if (is_archive())
+			if (is_null($archive_title))
+				echo '<article><h1>BLOG</h1>';
+			else
+				echo '<article>';
 
-		while (have_posts()) { the_post();
+		if (!is_null($archive_title)) echo "<h1>{$archive_title}</h1>";
+
+
+		while (have_posts()) {the_post();
+
 			if (is_front_page()) {
 				?>
 				<!-- homepage -->
@@ -56,7 +59,7 @@
 				</aside>
 				</div>
 
-			<?php } elseif (is_archive() || is_home()) { ?>
+			<?php } elseif (is_archive()) { ?>
 
 				<!-- each article -->
 				<div class="row">
@@ -77,16 +80,22 @@
 					<div class="row">
 						<div class="eight column"><?php the_content(); ?></div>
 					</div>
+
+					<!-- if single -->
+					<?php if (is_single()) comments_template(); ?>
 				</article>
 			<?php
 
 			}
 		}
 
-		if (!is_null($archive_title)) {
-			echo '<div class="page-link">'.posts_nav_link('<span class="page-link-spacer">&bull;</span>','< Newer posts  ','  Older posts >').'</div>';
-			echo "</article>";
-		}
+		if (!is_null($archive_title)) echo '<div class="page-link">'.posts_nav_link('<span class="page-link-spacer">&bull;</span>','< Newer posts  ','  Older posts >').'</div>';
+		if (is_archive)	echo "</article>";
+
+
+		if (is_home()) { ?>
+			<div class="four column"><?php get_sidebar(); ?></div>
+		<?}
 
 
 	} elseif(is_404()){ ?>
@@ -102,7 +111,7 @@
 	</div>
 
 
-        <?php //get_sidebar(); ?>
+
 
 </section>
 </div>

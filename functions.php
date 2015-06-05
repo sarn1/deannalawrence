@@ -7,7 +7,7 @@ $navmenus = array(
 
 //widget areas
 $widgetareas = array(
-	'Sidebar', 'Footer'
+	'Sidebar'
 );
 
  
@@ -189,45 +189,45 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 /* BLOG FUNCTIONALITY
 
-//blog commenting 
-function mw_comments($comment, $args, $depth) { ?> 
+//blog commenting
+function mw_comments($comment, $args, $depth) { ?>
 	<?php $GLOBALS['comment'] = $comment; ?>
 
-	
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-		<div class="comment-author vcard">
-			<div class="image">
-				<?php echo get_avatar( $comment, 48 ); ?>
-			</div>
-			<div class="info">
-				<div class="comment-meta">
-					<a href="<?php the_author_meta( 'user_url'); ?>"><?php printf(__('%s'), get_comment_author_link()) ?></a>
-				</div>
-				<small class="comment-date"><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)'),'  ','') ?></small>
-			</div>
-		</div>		 
-		<?php if ($comment->comment_approved == '0') : ?>
-			<em><?php _e('Your comment is awaiting moderation.') ?></em>
-			<br />
-		<?php endif; ?>		 
-		 <div class="comment-text">	
-			 <?php comment_text() ?>
-			 <div class="reply">
-				<?php echo comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])); ?>
-			 </div>
-		 </div>
-<?php }  
 
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+	<div class="comment-author vcard">
+		<div class="image">
+			<?php echo get_avatar( $comment, 48 ); ?>
+		</div>
+		<div class="info">
+			<div class="comment-meta">
+				<a href="<?php the_author_meta( 'user_url'); ?>"><?php printf(__('%s'), get_comment_author_link()) ?></a>
+			</div>
+			<small class="comment-date"><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)'),'  ','') ?></small>
+		</div>
+	</div>
+	<?php if ($comment->comment_approved == '0') : ?>
+		<em><?php _e('Your comment is awaiting moderation.') ?></em>
+		<br />
+	<?php endif; ?>
+	<div class="comment-text">
+		<?php comment_text() ?>
+		<div class="reply">
+			<?php echo comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])); ?>
+		</div>
+	</div>
+<?php }
 
-//automatically assign categories to blog post - assign all blog post as blog 
-function add_category_automatically1($post_ID) {  
-    global $wpdb;  
-        if(!in_category('bundle')){  
-            $cat = array(1);  
-            wp_set_object_terms($post_ID, $cat, 'category', true);  
-        }  
-}  
-add_action('publish_post', 'add_category_automatically1');  
+/*
+//automatically assign categories to blog post - assign all blog post as blog
+function add_category_automatically1($post_ID) {
+	global $wpdb;
+	if(!in_category('bundle')){
+		$cat = array(1);
+		wp_set_object_terms($post_ID, $cat, 'category', true);
+	}
+}
+add_action('publish_post', 'add_category_automatically1');
 
 
 */

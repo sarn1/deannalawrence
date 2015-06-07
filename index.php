@@ -100,7 +100,7 @@
 					</div>
 
 					<!-- if single -->
-					<?php if (is_single()) comments_template(); ?>
+					<?php if (is_single()) comments_template();  ?>
 				</article>
 			<?php
 

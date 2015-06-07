@@ -221,18 +221,22 @@ function mw_comments($comment, $args, $depth) { ?>
 	</div>
 	<?php }
 
-/*
-//automatically assign categories to blog post - assign all blog post as blog
-function add_category_automatically1($post_ID) {
-	global $wpdb;
-	if(!in_category('bundle')){
-		$cat = array(1);
-		wp_set_object_terms($post_ID, $cat, 'category', true);
+
+	//to customize the comment form
+	//http://codex.wordpress.org/Function_Reference/comment_form
+
+	/*
+	//automatically assign categories to blog post - assign all blog post as blog
+	function add_category_automatically1($post_ID) {
+		global $wpdb;
+		if(!in_category('bundle')){
+			$cat = array(1);
+			wp_set_object_terms($post_ID, $cat, 'category', true);
+		}
 	}
-}
-add_action('publish_post', 'add_category_automatically1');
+	add_action('publish_post', 'add_category_automatically1');
 
 
-*/
+	*/
 
 ?>

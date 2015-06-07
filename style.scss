@@ -126,11 +126,16 @@ img {
 
 input, textarea {
   color:#000;
+}
 
-  &[type=submit] {
+  input[type="submit"] {
 	color:$font-color;
   }
-}
+
+  textarea, input[type="text"] {
+	width: 85%;
+	color: #000;
+  }
 
 header {}
 footer {}

@@ -90,10 +90,26 @@ article {
 }
 
 aside {
+
+  h2 {
+	font-size:$font-size !important;
+	line-height:$line-height !important;
+	font-family:$font !important;
+	font-weight:700 !important;
+	color:$font-color !important;
+	text-decoration: underline;
+	text-transform: uppercase;
+  }
+
   margin-left: 20px;
 
   ul {
 	padding-top:5px;
+	list-style:none;
+
+  	li a.current_page_item {
+	  color: $font-color-2;
+	}
   }
 }
 
@@ -110,6 +126,10 @@ img {
 
 input, textarea {
   color:#000;
+
+  &[type=submit] {
+	color:$font-color;
+  }
 }
 
 header {}
@@ -265,23 +285,62 @@ body.home {
 
 }
 
-body.archive, body.blog {
+body.archive, body.blog, body.single, body.page-id-13 {
 
-  h3 {
-	font-size:$font-size;
-	margin-bottom:5px;
+  article {
+	h1 {
+	  margin-bottom:25px;
+	}
+
+	h2 {
+	  font-size:25px;
+	  line-height:27px;
+	  font-family: $font-logo;
+	  text-transform: uppercase;
+	  font-weight: 400;
+	  color: $font-color-2;
+	}
+
+	h3 {
+	  font-size:$font-size;
+	  font-family: $font-logo;
+	  text-transform: uppercase;
+	  margin-bottom:5px;
+	  color: $font-color-2;
+
+	  a {
+		color: $font-color-2;
+	  }
+	}
+
+
   }
 
-  &article {
-	h2 {
-	  font-family: $font;
-	  font-size: $font-size;
-	  line-height: $line-height;
-	  margin-bottom: 5px;
-	  font-weight: 400;
-	  color: $font-color;
-	  text-transform: uppercase;
+  .more-link {
+	font-style: italic;
+	font-size:12px;
+	line-height:14px;
+  }
+
+  #comments {
+	h1 {
+	  font-size:22px;
+	  line-height:24px;
+	  color: $font-color-2;
 	}
+
+	.comment-notes {
+	  margin-bottom: 15px;
+	}
+
+	label {
+	  font-weight:normal;
+	}
+
+	#form-allowed-tags, .comment-notes, .comment-form-url {
+	  display:none;
+	}
+
   }
 }
 
@@ -303,6 +362,38 @@ body.single {
 	  padding:0;
 	}
   }
+}
+
+//gallery
+body.page-id-13 {
+	._thumbs {
+	  margin:0 5px 10px 0;
+	}
+
+  	//fit-vid
+	video {
+	  max-width: 100%;
+	  height: auto;
+	}
+
+	iframe,
+	embed,
+	object {
+	  max-width: 100%;
+	}
+
+	.video_container {
+	  width: 100%;
+	  margin:0px auto 15px auto;
+	}
+
+	.vendor {
+	  padding: 0%;
+	}
+
+	.unsupported {
+	  background: #000;
+	}
 }
 
 //--------------- AFTER SASS ----------------

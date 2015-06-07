@@ -181,17 +181,20 @@ add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 
 
+/* BLOG FUNCTIONALITY */
+
+add_filter('comment_form_defaults', 'form_override_function');
+
+function form_override_function($defaults) {
+	$defaults['title_reply'] = '<hr /><h1>Join the conversation</h1>';
+	//$defaults['title_reply_to'] = 'Your text %s';
+	return $defaults;
+}
 
 
 
-
-
-
-/* BLOG FUNCTIONALITY
-
-//blog commenting
 function mw_comments($comment, $args, $depth) { ?>
-	<?php $GLOBALS['comment'] = $comment; ?>
+<?php $GLOBALS['comment'] = $comment; ?>
 
 
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
@@ -212,11 +215,11 @@ function mw_comments($comment, $args, $depth) { ?>
 	<?php endif; ?>
 	<div class="comment-text">
 		<?php comment_text() ?>
-		<div class="reply">
-			<?php echo comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])); ?>
-		</div>
+		<!-- <div class="reply"> -->
+		<?php echo comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])); ?>
+		<!-- </div> -->
 	</div>
-<?php }
+	<?php }
 
 /*
 //automatically assign categories to blog post - assign all blog post as blog

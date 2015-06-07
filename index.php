@@ -74,7 +74,25 @@
 				<!-- other pages -->
 				<article>
 					<div class="row">
-						<div class="eight column"><h1><?php the_title(); ?></h1></div>
+						<div class="eight column">
+							<?php if (is_single()) { ?>
+								<h2><?php the_title(); ?></h2>
+								<h3><?php
+									$categories = get_the_category();
+									$separator = ', ';
+									$output = '';
+									if($categories) {
+										foreach ($categories as $category) {
+											$output .= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $category->name)) . '">' . $category->cat_name . '</a>' . $separator;
+										}
+										echo trim($output, $separator);
+									}
+									?></h3>
+								<h3><?php the_date() ?></h3>
+							<?php } else { ?>
+								<h1><?php the_title(); ?></h1>
+							<?php } ?>
+						</div>
 					</div>
 
 					<div class="row">

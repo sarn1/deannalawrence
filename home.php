@@ -9,6 +9,7 @@
 				<div class="two-thirds column">
 					<h1>BLOG</h1>
 
+
 					<?php if (have_posts()) { while (have_posts()) { the_post(); ?>
 						<!-- each article -->
 						<h2><?php the_title(); ?></h2>
@@ -23,6 +24,7 @@
 								echo trim($output, $separator);
 							}
 							?></h3>
+						<h3><?php the_date() ?></h3>
 						<?php the_excerpt(); ?>
 						<a class="more-link" href="<?php the_permalink();?>"><?php _e('Continue reading');?> <?php the_title();?> ></a>
 						<hr />

@@ -238,5 +238,3 @@ function mw_comments($comment, $args, $depth) { ?>
 
 
 	*/
-
-?>

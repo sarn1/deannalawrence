@@ -401,7 +401,31 @@ body.page-id-13 {
 	}
 }
 
-//--------------- AFTER SASS ----------------
+//media queries
+@media screen and (max-width:400px){
+  h1#logo span {
+	display:none;
+  }
+
+  header h2#sublogo {
+	display:block;
+  }
+
+  table td, table tr {
+	display:block;
+	width:100%;
+	margin:0;
+	padding:0;
+  }
+
+  .container {
+	padding:0;
+  }
+
+  article {
+	width: 90%;
+  }
+}
 
 
 
